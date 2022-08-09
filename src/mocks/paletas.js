@@ -3,7 +3,7 @@ export const paletas = [
       titulo: "Açaí com Leite Condensado",
       descricao:
         "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
-      foto: require("../assets/images/acai-com-leite-condensado.png").default,
+      foto: "../../../public/assets/images/acai-com-leite-condensado.png",
       preco: 10.0,
       sabor: "Açaí",
       recheio: "Leite Condensado",
@@ -13,7 +13,7 @@ export const paletas = [
       titulo: "Banana com Nutella",
       descricao:
         "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
-      foto: require("../assets/images/banana-com-nutella.png").default,
+      foto: "../../../public/assets/images/banana-com-nutella.png",
       preco: 10.0,
       sabor: "Banana",
       recheio: "Nutella",
@@ -23,7 +23,7 @@ export const paletas = [
       titulo: "Chocolate Belga",
       descricao:
         "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
-      foto: require("../assets/images/chocolate-belga.png").default,
+      foto: "../../../public/assets/images/chocolate-belga.png",
       preco: 7.0,
       sabor: "Chocolate Belga",
       possuiRecheio: false,
@@ -32,7 +32,7 @@ export const paletas = [
       titulo: "Chocolate Belga com Brigadeiro",
       descricao:
         "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
-      foto: require("../assets/images/chocolate-belga-com-brigadeiro.png").default,
+      foto: "../../../public/assets/images/chocolate-belga-com-brigadeiro.png",
       preco: 10.0,
       sabor: "Chocolate Belga",
       recheio: "Brigadeiro",
