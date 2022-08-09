@@ -1,40 +1,53 @@
-import './PaletaLista.css'
-import { paletas } from '../mocks/paletas'
-
+import "./PaletaLista.css";
+import { paletas } from "../mocks/paletas";
+import React, { useState } from "react";
 
 function PaletaLista() {
-    return (
+  const [paletaSelecionada, setPaletaSelecionada] = useState({});
 
-<div className="PaletaLista">
-    {paletas.map((paleta, index) => (
-    <div className="PaletaListaItem">
-        <div>
-        <div className="PaletaListaItem__titulo"> {paleta.titulo} </div>
-        <div className="PaletaListaItem__preco">
+  const adicionarItem = (paletaIndex) => {
+    const paleta = {
+      [paletaIndex]: Number(paletaSelecionada[paletaIndex] || 0) + 1,
+    };
+    setPaletaSelecionada({ ...paletaSelecionada, ...paleta });
+  };
+
+  return (
+    <div className="PaletaLista">
+      {paletas.map((paleta, index) => (
+        <div className="PaletaListaItem" key={`PaletaListaItem-${index}`}>
+          <span className="PaletaListaItem__badge">
             {" "}
-            R$ {paleta.preco.toFixed(2)}{" "}
+            {paletaSelecionada[index] || 0}{" "}
+          </span>
+          <div>
+            <div className="PaletaListaItem__titulo"> {paleta.titulo} </div>
+            <div className="PaletaListaItem__preco">
+              {" "}
+              R$ {paleta.preco.toFixed(2)}{" "}
+            </div>
+            <div className="PaletaListaItem__descricao">
+              {" "}
+              {paleta.descricao}{" "}
+            </div>
+            <div className="PaletaListaItem__acoes Acoes">
+              <button
+                className="Acoes__adicionar Acoes__adicionar--preencher"
+                onClick={() => adicionarItem(index)}
+              >
+                adicionar
+              </button>
+            </div>
+          </div>
+          <img
+            className="PaletaListaItem__foto"
+            src={paleta.foto}
+            alt={`Paleta de ${paleta.sabor}`}
+          />
         </div>
-        <div className="PaletaListaItem__descricao">
-            {" "}
-            {paleta.descricao}{" "}
-        </div>
-        <div className="PaletaListaItem__acoes Acoes">
-            <button className="Acoes__adicionar Acoes__adicionar--preencher">
-            adicionar
-            </button>
-        </div>
-        </div>
-        <img
-        className="PaletaListaItem__foto"
-        src={paleta.foto}
-        alt={`Paleta de ${paleta.sabor}`}
-        />
+      ))}
     </div>
-    ))}
-</div>
+  );
+}
 
-
-    );
-  }
-  
-  export default PaletaLista;
+export default PaletaLista;
