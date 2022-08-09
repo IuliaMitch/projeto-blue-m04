@@ -1,13 +1,12 @@
 import "./Home.css";
-import PaletaLista from "./PaletaLista";
-import Header from "./Header";
+import PaletaLista from "../components/PaletaLista/PaletaLista";
+import Header from "../components/Header/Header"
 
 function Home() {
   return (
     <div className="Home">
-      <div className="Home__header Header">
+      
         <Header />
-      </div>
       <div className="Home__container">
         <PaletaLista />
       </div>

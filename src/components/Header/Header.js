@@ -1,12 +1,13 @@
 /* ... */
-import sacola from "../assets/icons/sacola.svg";
-import logo from "../assets/logo.svg";
+import sacola from "../../assets/icons/sacola.svg";
+import logo from "../../assets/logo.svg";
 /* ... */
 
 /* ... */
 
 export default function Header() {
   return (
+    <div className="Header">
     <div className="row">
       <div className="Header__logo Logo">
         <img
@@ -27,6 +28,7 @@ export default function Header() {
           />
         </div>
       </div>
+    </div>
     </div>
   );
 }
