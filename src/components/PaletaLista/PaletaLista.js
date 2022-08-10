@@ -1,18 +1,13 @@
 import "./PaletaLista.css";
 import { useState, useEffect } from "react";
 import PaletaListaItem from "../PaletaListaItem/PaletaListaItem";
-import { PaletaService } from "../../services/PaletaService"
-import PaletaDetalhesModal from "../PaletaDetalhesModal/PaletaDetalhesModal"
-
+import { PaletaService } from "../../services/PaletaService";
+import PaletaDetalhesModal from "../PaletaDetalhesModal/PaletaDetalhesModal";
 
 function PaletaLista({ paletaCriada }) {
-
   const [paletas, setPaletas] = useState([]);
   const [paletaSelecionada, setPaletaSelecionada] = useState({});
-  const [paletaModal, setPaletaModal] = useState(false)
-
-
-
+  const [paletaModal, setPaletaModal] = useState(false);
 
   const adicionarItem = (paletaIndex) => {
     const paleta = {
@@ -40,11 +35,11 @@ function PaletaLista({ paletaCriada }) {
   const adicionaPaletaNaLista = (paleta) => {
     const lista = [...paletas, paleta];
     setPaletas(lista);
-};
+  };
 
-useEffect(() => {
-  if (paletaCriada) adicionaPaletaNaLista(paletaCriada);
-}, [paletaCriada]);
+  useEffect(() => {
+    if (paletaCriada) adicionaPaletaNaLista(paletaCriada);
+  }, [paletaCriada]);
 
   useEffect(() => {
     getLista();
@@ -63,7 +58,12 @@ useEffect(() => {
           clickItem={(paletaId) => getPaletaById(paletaId)}
         />
       ))}
-      {paletaModal && <PaletaDetalhesModal paleta={paletaModal} closeModal={() => setPaletaModal(false)} />}
+      {paletaModal && (
+        <PaletaDetalhesModal
+          paleta={paletaModal}
+          closeModal={() => setPaletaModal(false)}
+        />
+      )}
     </div>
   );
 }
