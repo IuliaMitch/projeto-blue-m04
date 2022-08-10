@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+## Prazer, meu nome é Iulia
+Esse projeto foi feito em ReactJS com o intuito de criar um cardápio de paletas de sorvete, com auxílio do material da Blue EdTech
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
