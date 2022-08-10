@@ -1,34 +1,48 @@
 /* ... */
 import sacola from "../../assets/icons/sacola.svg";
 import logo from "../../assets/logo.svg";
+import "./Header.css";
+import paleta from "assets/icons/paleta.svg";
 /* ... */
 
 /* ... */
 
-export default function Header() {
+export default function Header({ createPaleta }) {
   return (
     <div className="Header">
-    <div className="row">
-      <div className="Header__logo Logo">
-        <img
-          src={logo}
-          width="70px"
-          alt="Logo El Geladon"
-          className="Logo__icone"
-        />
-        <span className="Logo__titulo"> El Geladon </span>
-      </div>
-      <div className="Header__opcoes Opcoes">
-        <div className="Opcoes__sacola Sacola">
+      <div className="row">
+        <div className="Header__logo Logo">
           <img
-            src={sacola}
-            width="40px"
-            className="Sacola__icone"
-            alt="Sacola de compras"
+            src={logo}
+            width="70px"
+            alt="Logo El Geladon"
+            className="Logo__icone"
           />
+          <span className="Logo__titulo"> El Geladon </span>
+        </div>
+        <div className="Header__opcoes Opcoes">
+          <button
+            type="button"
+            className="Opcoes__paleta Paleta"
+            onClick={() => createPaleta()}
+          >
+            <img
+              src={paleta}
+              width="40px"
+              className="Paleta__icone"
+              alt="Adiconar paleta"
+            />
+          </button>
+          <div className="Opcoes__sacola Sacola">
+            <img
+              src={sacola}
+              width="40px"
+              className="Sacola__icone"
+              alt="Sacola de compras"
+            />
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }
