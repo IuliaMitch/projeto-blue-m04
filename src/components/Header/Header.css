@@ -112,5 +112,16 @@
   }
   
   .Paleta__icone {
+    color: black;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
     cursor: pointer;
+    padding: .4rem;
+    border-radius: 6.5px;
+    transition: 1s all;
+
+  }
+
+  .Paleta__icone:hover {
+    transform: scale(1.1);
   }

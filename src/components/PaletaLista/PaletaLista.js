@@ -42,6 +42,10 @@ function PaletaLista({ paletaCriada }) {
     setPaletas(lista);
 };
 
+useEffect(() => {
+  if (paletaCriada) adicionaPaletaNaLista(paletaCriada);
+}, [paletaCriada]);
+
   useEffect(() => {
     getLista();
   }, []);
@@ -56,7 +60,7 @@ function PaletaLista({ paletaCriada }) {
           index={index}
           onAdd={(index) => adicionarItem(index)}
           onRemove={(index) => removerItem(index)}
-          clickItem={(paletaId) => getPaletaById(paleta)}
+          clickItem={(paletaId) => getPaletaById(paletaId)}
         />
       ))}
       {paletaModal && <PaletaDetalhesModal paleta={paletaModal} closeModal={() => setPaletaModal(false)} />}

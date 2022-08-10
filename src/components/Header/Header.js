@@ -2,10 +2,6 @@
 import sacola from "../../assets/icons/sacola.svg";
 import logo from "../../assets/logo.svg";
 import "./Header.css";
-import paleta from "assets/icons/paleta.svg";
-/* ... */
-
-/* ... */
 
 export default function Header({ createPaleta }) {
   return (
@@ -26,12 +22,9 @@ export default function Header({ createPaleta }) {
             className="Opcoes__paleta Paleta"
             onClick={() => createPaleta()}
           >
-            <img
-              src={paleta}
-              width="40px"
-              className="Paleta__icone"
-              alt="Adiconar paleta"
-            />
+            <span width="40px" className="Paleta__icone" alt="Adiconar paleta">
+              +
+            </span>
           </button>
           <div className="Opcoes__sacola Sacola">
             <img

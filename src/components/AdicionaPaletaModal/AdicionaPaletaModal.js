@@ -1,7 +1,7 @@
 import Modal from "../Modal/Modal";
 import "./AdicionaPaletaModal.css";
 import { useState, useEffect } from "react";
-import { PaletaService } from "services/PaletaService";
+import { PaletaService } from "../../services/PaletaService";
 
 function AdicionaPaletaModal({ closeModal, onCreatePaleta }) {
   const form = {
