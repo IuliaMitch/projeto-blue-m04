@@ -109,9 +109,14 @@
   .Paleta {
     background: none;
     border: none;
+    transform: translateY(-3px);
+    border-radius: 10px;
+    transition: all .5s;
+    padding: 0
   }
   
   .Paleta__icone {
+    transform: translateY(3px);
     color: black;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.3);
@@ -120,6 +125,9 @@
     border-radius: 6.5px;
     transition: 1s all;
 
+  }
+  .Paleta--ativa {
+    background: rgba(148, 0, 211);
   }
 
   .Paleta__icone:hover {
