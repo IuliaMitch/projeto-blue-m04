@@ -1,5 +1,8 @@
 import "./Home.css";
 import { ActionMode } from "../constants/index";
+
+import DeletaPaletaModal from "../components/DeletaPaletaModal/DeletaPaletaModal";
+
 import PaletaLista from "../components/PaletaLista/PaletaLista";
 import Header from "../components/Header/Header";
 import AdicionaEditaPaletaModal from "../components/AdicionaEditaPaletaModal/AdicionaEditaPaletaModal";
@@ -10,6 +13,7 @@ function Home() {
   const [canShowAdicionaPaletaModal, setCanShowAdicionaPaletaModal] =
     useState(false);
 
+  const [paletaRemovida, setPaletaRemovida] = useState();
   const [modoAtual, setModoAtual] = useState(ActionMode.NORMAL);
 
   const [paletaParaEditar, setPaletaParaEditar] = useState();
@@ -43,6 +47,7 @@ function Home() {
     <div className="Home">
       <Header
         mode={modoAtual}
+        deletePaleta={() => handleActions(ActionMode.DELETAR)}
         updatePaleta={() => handleActions(ActionMode.ATUALIZAR)}
         createPaleta={() => setCanShowAdicionaPaletaModal(true)}
       />
@@ -53,7 +58,17 @@ function Home() {
           mode={modoAtual}
           paletaCriada={paletaParaAdicionar}
           paletaEditada={paletaEditada}
+          paletaRemovida={paletaRemovida}
         />
+
+        {paletaParaDeletar && (
+          <DeletaPaletaModal
+            paletaParaDeletar={paletaParaDeletar}
+            closeModal={handleCloseModal}
+            onDeletePaleta={(paleta) => setPaletaRemovida(paleta)}
+          />
+        )}
+
         {canShowAdicionaPaletaModal && (
           <AdicionaEditaPaletaModal
             mode={modoAtual}

@@ -5,7 +5,12 @@ import { ActionMode } from "../../constants/index";
 
 import "./Header.css";
 
-export default function Header({ createPaleta, updatePaleta, mode }) {
+export default function Header({
+  createPaleta,
+  updatePaleta,
+  mode,
+  deletePaleta,
+}) {
   return (
     <div className="Header">
       <div className="row">
@@ -19,6 +24,18 @@ export default function Header({ createPaleta, updatePaleta, mode }) {
           <span className="Logo__titulo"> El Geladon </span>
         </div>
         <div className="Header__opcoes Opcoes">
+          <button
+            type="button"
+            className={`Opcoes__paleta Paleta ${
+              mode === ActionMode.DELETAR && "Paleta--deletar"
+            }`}
+            onClick={() => deletePaleta()}
+          >
+            <span width="40px" className="Paleta__icone" alt="Adiconar paleta">
+              Deletar
+            </span>
+          </button>
+
           <button
             type="button"
             className={`Opcoes__paleta Paleta ${
